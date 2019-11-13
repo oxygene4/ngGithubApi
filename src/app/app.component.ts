@@ -9,8 +9,8 @@ import {ajax} from 'rxjs/ajax';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  private subject = new Subject<any>();
-  protected users: IUser[] = [];
+  public subject = new Subject<any>();
+  public users: IUser[] = [];
   readonly baseUrl = 'https://api.github.com/search/users?q=';
 
   constructor() {
@@ -37,7 +37,7 @@ export class AppComponent {
     });
   }
 
-  protected trackByFunction(index, item) {
+  public trackByFunction(index, item) {
     return item.id;
   }
 }
